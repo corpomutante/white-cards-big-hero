@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Mobiliteit — hero</title>
+<title>Mobiliteit — case study card</title>
 <style>
   @font-face {
     font-family: 'Manrope';
@@ -12,31 +12,17 @@
   html, body { margin:0; padding:0; width:100%; background:transparent; font-family: 'Manrope', 'Helvetica Neue', Arial, sans-serif; }
   * { box-sizing: border-box; }
 
-  .mob-wrap {
-    width: 100%;
-    padding: clamp(16px, 3vw, 48px);
-    display: flex;
-    justify-content: center;
-  }
-
   .mob-hero {
     position: relative;
     width: 100%;
-    max-width: 1400px;
-    height: clamp(380px, 54vw, 760px);
-    border-radius: clamp(16px, 2.2vw, 32px);
+    max-width: 487px;
+    aspect-ratio: 487 / 363;
+    margin: 0 auto;
+    border-radius: clamp(8px, 4.5%, 24px);
     overflow: hidden;
     background: linear-gradient(120deg, #1B1E3A 0%, #33396E 30%, #5669FF 58%, #7A3FB0 78%, #E5007E 100%);
     background-size: 260% 260%;
     animation: mobGradient 18s ease-in-out infinite alternate;
-    box-shadow: 0 20px 45px -20px rgba(20, 22, 30, 0.16);
-  }
-
-  @media (min-width: 1024px) {
-    .mob-hero { height: 520px; }
-  }
-  @media (min-width: 1280px) {
-    .mob-hero { max-width: 1212px; height: 560px; }
   }
 
   @keyframes mobGradient {
@@ -50,23 +36,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3.5%;
-    padding: 0 3.5%;
+    gap: 2.5%;
+    padding: 0 3%;
   }
 
-  /* width-driven: each phone shrinks/grows to fit the row, height follows from
-     aspect-ratio — this guarantees a phone is either shown whole or not at all,
-     never clipped by the card's overflow:hidden edge. */
   .mob-phone {
     position: relative;
-    flex: 1 1 260px;
-    max-width: 340px;
-    max-height: 99%;
+    flex: 1 1 0;
+    max-height: 96%;
     aspect-ratio: 393 / 836;
-    filter: drop-shadow(0 22px 34px rgba(10, 8, 30, 0.40));
+    filter: drop-shadow(0 14px 22px rgba(10, 8, 30, 0.40));
   }
-
-  .mob-phone--extra { display: none; }
 
   .mob-phone img {
     position: absolute;
@@ -86,14 +66,6 @@
   }
   .mob-shot.is-active { opacity: 1; z-index: 3; }
 
-  @media (max-width: 760px) {
-    .mob-hero { height: clamp(340px, 66vw, 520px); }
-    .mob-phones { gap: 2.4%; padding: 0 2.4%; }
-  }
-  @media (max-width: 480px) {
-    .mob-hero { height: clamp(300px, 86vw, 420px); }
-  }
-
   @media (prefers-reduced-motion: reduce) {
     .mob-hero { animation: none; }
     .mob-shot { transition: opacity 300ms ease; }
@@ -110,64 +82,44 @@
 </head>
 <body>
 
-  <div class="mob-wrap">
-    <div class="mob-hero">
-      <div class="mob-phones">
+  <div class="mob-hero">
+    <div class="mob-phones">
 
-        <div class="mob-phone mob-phone--extra" data-phone="4">
-          <img class="mob-plain" src="images/device-bezel.png" alt="">
-          <img class="mob-shot is-active" src="images/screen-07-location.png" alt="">
-          <img class="mob-shot" src="images/screen-11-account.png" alt="">
-          <img class="mob-shot" src="images/screen-15-saved.png" alt="">
-          <img class="mob-shot" src="images/screen-03-findway.png" alt="">
-        </div>
-
-        <div class="mob-phone" data-phone="0">
-          <img class="mob-plain" src="images/device-bezel.png" alt="">
-          <img class="mob-shot is-active" src="images/screen-01-trip.png" alt="">
-          <img class="mob-shot" src="images/screen-05-plan.png" alt="">
-          <img class="mob-shot" src="images/screen-09-options.png" alt="">
-          <img class="mob-shot" src="images/screen-13-editprofile.png" alt="">
-        </div>
-
-        <div class="mob-phone" data-phone="1">
-          <img class="mob-plain" src="images/device-bezel.png" alt="">
-          <img class="mob-shot is-active" src="images/screen-02-ontime.png" alt="">
-          <img class="mob-shot" src="images/screen-06-search.png" alt="">
-          <img class="mob-shot" src="images/screen-10-departure.png" alt="">
-          <img class="mob-shot" src="images/screen-14-steps.png" alt="">
-        </div>
-
-        <div class="mob-phone" data-phone="2">
-          <img class="mob-plain" src="images/device-bezel.png" alt="">
-          <img class="mob-shot is-active" src="images/screen-03-findway.png" alt="">
-          <img class="mob-shot" src="images/screen-07-location.png" alt="">
-          <img class="mob-shot" src="images/screen-11-account.png" alt="">
-          <img class="mob-shot" src="images/screen-15-saved.png" alt="">
-          <img class="mob-shot" src="images/screen-16-alerts.png" alt="">
-        </div>
-
-        <div class="mob-phone" data-phone="3">
-          <img class="mob-plain" src="images/device-bezel.png" alt="">
-          <img class="mob-shot is-active" src="images/screen-04-delays.png" alt="">
-          <img class="mob-shot" src="images/screen-08-filters.png" alt="">
-          <img class="mob-shot" src="images/screen-12-departures.png" alt="">
-          <img class="mob-shot" src="images/screen-17-transfer.png" alt="">
-        </div>
-
+      <div class="mob-phone" data-phone="0">
+        <img class="mob-plain" src="images/device-bezel.png" alt="">
+        <img class="mob-shot is-active" src="images/screen-01-trip.png" alt="">
+        <img class="mob-shot" src="images/screen-05-plan.png" alt="">
+        <img class="mob-shot" src="images/screen-09-options.png" alt="">
+        <img class="mob-shot" src="images/screen-13-editprofile.png" alt="">
       </div>
+
+      <div class="mob-phone" data-phone="1">
+        <img class="mob-plain" src="images/device-bezel.png" alt="">
+        <img class="mob-shot is-active" src="images/screen-02-ontime.png" alt="">
+        <img class="mob-shot" src="images/screen-06-search.png" alt="">
+        <img class="mob-shot" src="images/screen-10-departure.png" alt="">
+        <img class="mob-shot" src="images/screen-14-steps.png" alt="">
+      </div>
+
+      <div class="mob-phone" data-phone="2">
+        <img class="mob-plain" src="images/device-bezel.png" alt="">
+        <img class="mob-shot is-active" src="images/screen-03-findway.png" alt="">
+        <img class="mob-shot" src="images/screen-07-location.png" alt="">
+        <img class="mob-shot" src="images/screen-11-account.png" alt="">
+        <img class="mob-shot" src="images/screen-15-saved.png" alt="">
+      </div>
+
     </div>
   </div>
 
 <script>
   const SHOW_MS = 5200;      // how long a screen stays visible
-  const STAGGER_MS = 1600;    // offset between each phone's cycle so they don't change together
+  const STAGGER_MS = 1600;   // offset between each phone's cycle so they don't change together
 
   document.querySelectorAll('.mob-phone').forEach((phone, phoneIndex) => {
     const shots = [...phone.querySelectorAll('.mob-shot')];
     let current = 0;
     // each phone's own cycle length is slightly different, so they drift out of sync
-    // instead of ever repeating the same alignment
     const interval = SHOW_MS + phoneIndex * 370;
 
     function advance() {
